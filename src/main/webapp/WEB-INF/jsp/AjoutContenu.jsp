@@ -104,10 +104,10 @@
                     <span class="nav-link-text ms-1">Liste des IA</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="btn bg-gradient-primary mt-4 w-100" href="<%= request.getContextPath() %>/deconnexion" type="button">Se déconnecter</a>
+            </li>
         </ul>
-    </div>
-    <div class="sidenav-footer mx-3 ">
-        <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
     </div>
 </aside>
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <select name="idCategorie" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option>Catégorie</option>
+                                        <option value="">Catégorie...</option>
                                         <% for ( Categorie categorie : categories) { %>
                                         <option value="<%= categorie.getId() %>"><%= categorie.getDesignation() %></option>
                                         <% } %>

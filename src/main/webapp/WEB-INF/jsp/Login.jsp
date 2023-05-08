@@ -48,11 +48,11 @@
                                 <form role="form" action="<%= request.getContextPath() %>/loginAdmin" method="post">
                                     <label>Email</label>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" name="mail" placeholder="Email" aria-label="Email" aria-describedby="email-addon" required>
+                                        <input type="email" class="form-control" value="admin@gmail.com" name="mail" placeholder="Email" aria-label="Email" aria-describedby="email-addon" required>
                                     </div>
                                     <label>Mot de passe</label>
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" name="motDePasse" placeholder="Mot de passe" aria-label="Password" aria-describedby="password-addon" required>
+                                        <input type="password" class="form-control" value="Admin" name="motDePasse" placeholder="Mot de passe" aria-label="Password" aria-describedby="password-addon" required>
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Se connecter</button>

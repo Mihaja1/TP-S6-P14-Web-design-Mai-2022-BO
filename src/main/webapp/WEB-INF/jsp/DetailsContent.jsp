@@ -87,10 +87,10 @@
           <span class="nav-link-text ms-1">Liste des IA</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="btn bg-gradient-primary mt-4 w-100" href="<%= request.getContextPath() %>/deconnexion" type="button">Se déconnecter</a>
+      </li>
     </ul>
-  </div>
-  <div class="sidenav-footer mx-3 ">
-    <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
   </div>
 </aside>
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
@@ -104,14 +104,6 @@
         </ol>
         <h6 class="font-weight-bolder mb-0">Intélligence artificielle</h6>
       </nav>
-      <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-          <div class="input-group">
-            <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" placeholder="Type here...">
-          </div>
-        </div>
-      </div>
     </div>
   </nav>
   <!-- End Navbar -->
@@ -125,7 +117,7 @@
           <div class="card-body px-4 pt-0 pb-0">
             <p><strong>Catégorie:</strong> <%= contenu.getCategorie().getDesignation() %></p>
             <p><strong>Auteur:</strong> <%= contenu.getAdmin().getNom() %></p>
-            <p><strong>Publié le:</strong> <fmt:formatDate type="both" timeStyle="short" value="<%= contenu.getDateAjout() %>" /></p>
+            <p><strong>Mis à jour le:</strong> <fmt:formatDate type="both" timeStyle="short" value="<%= contenu.getDateAjout() %>" /></p>
             <p><%= contenu.getContenu() %></p>
           </div>
         </div>

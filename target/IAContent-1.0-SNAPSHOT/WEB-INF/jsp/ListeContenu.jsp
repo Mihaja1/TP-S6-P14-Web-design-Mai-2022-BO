@@ -87,10 +87,10 @@
                     <span class="nav-link-text ms-1">Liste IA</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="btn bg-gradient-primary mt-4 w-100" href="<%= request.getContextPath() %>/deconnexion" type="button">Se déconnecter</a>
+            </li>
         </ul>
-    </div>
-    <div class="sidenav-footer mx-3 ">
-        <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
     </div>
 </aside>
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
@@ -104,14 +104,6 @@
                 </ol>
                 <h6 class="text-white font-weight-bolder ms-2">Intélligence artificielle</h6>
             </nav>
-            <div class="collapse navbar-collapse me-md-0 me-sm-4 mt-sm-0 mt-2" id="navbar">
-                <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                    <div class="input-group">
-                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Type here...">
-                    </div>
-                </div>
-            </div>
         </div>
     </nav>
     <!-- End Navbar -->
@@ -143,10 +135,18 @@
                                 <h5 class="font-weight-bolder"><%= contenu.getTitre() %></h5>
                                 <p>Auteur: <%= contenu.getAdmin().getNom() %></p>
                                 <p>Publié le: <fmt:formatDate type="both" timeStyle="short" value="<%= contenu.getDateAjout() %>" /></p>
-                                <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="<%= request.getContextPath() %>/intelligence-artificielle/contenu/<%= contenu.getUrl() %>/<%= contenu.getId() %>">
+                                <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto mb-3" href="<%= request.getContextPath() %>/intelligence-artificielle/contenu/<%= contenu.getUrl() %>/<%= contenu.getId() %>">
                                     En savoir plus
                                     <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                                 </a>
+                                <div class="row px-6">
+                                    <div class="col-6">
+                                        <a href="<%= request.getContextPath() %>/modifier/<%= contenu.getId() %>"><button type="button" class="btn btn-outline-warning">Modifier</button></a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="<%= request.getContextPath() %>/supprimer/<%= contenu.getId() %>"><button type="button" class="btn btn-outline-danger">Supprimer</button></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,22 +154,22 @@
             </div>
             <% } %>
         </div>
-    </div>
-    <footer class="footer pt-3  ">
-        <div class="container-fluid">
-            <div class="row align-items-center justify-content-lg-between">
-                <div class="col-lg-6 mb-lg-0 mb-4">
-                    <div class="copyright text-center text-sm text-muted text-lg-start">
-                        © <script>
-                        document.write(new Date().getFullYear())
-                    </script>,
-                        made with <i class="fa fa-heart"></i> by
-                        <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Info IA</a>
+        <footer class="footer pt-3  ">
+            <div class="container-fluid">
+                <div class="row align-items-center justify-content-lg-between">
+                    <div class="col-lg-6 mb-lg-0 mb-4">
+                        <div class="copyright text-center text-sm text-muted text-lg-start">
+                            © <script>
+                            document.write(new Date().getFullYear())
+                        </script>,
+                            made with <i class="fa fa-heart"></i> by
+                            <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Info IA</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </main>
 <!--   Core JS Files   -->
 <script src="<%= request.getContextPath() %>/assets/js/core/popper.min.js"></script>

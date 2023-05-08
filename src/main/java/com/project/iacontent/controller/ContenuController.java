@@ -7,10 +7,7 @@ import com.project.iacontent.model.Contenu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -88,4 +85,30 @@ public class ContenuController {
 
         return modelAndView;
     }
+
+    @GetMapping("modifier/{id}")
+    public ModelAndView modifier(@PathVariable Integer id, HttpSession session) {
+        Contenu contenu = hibernateDao.findById(Contenu.class, id);
+        List<Categorie> categories = hibernateDao.findAll(Categorie.class);
+        Admin admin = (Admin) session.getAttribute("admin");
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("ModifierContenu");
+        modelAndView.addObject("categories", categories);
+        modelAndView.addObject("admin", admin);
+        modelAndView.addObject("contenu", contenu);
+
+        return modelAndView;
+    }
+
+    @GetMapping("supprimer/{id}")
+    public ModelAndView supprimer(@PathVariable Integer id) {
+        Contenu contenu = hibernateDao.findById(Contenu.class, id);
+        List<Contenu> contenus = hibernateDao.findAll(Contenu.class);
+
+        hibernateDao.delete(contenu);
+
+        return this.liste();
+    }
+
 }

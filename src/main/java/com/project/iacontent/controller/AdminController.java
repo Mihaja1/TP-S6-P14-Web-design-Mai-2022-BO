@@ -53,4 +53,11 @@ public class AdminController {
 
         return modelAndView;
     }
+
+    @GetMapping("/deconnexion")
+    public ModelAndView deconnexion(HttpSession session){
+        session.removeAttribute("admin");
+
+        return this.home();
+    }
 }
