@@ -134,7 +134,7 @@
                                 <p class="mb-1 pt-2 text-bold"><%= contenu.getCategorie().getDesignation() %></p>
                                 <h5 class="font-weight-bolder"><%= contenu.getTitre() %></h5>
                                 <p>Auteur: <%= contenu.getAdmin().getNom() %></p>
-                                <p>Publié le: <fmt:formatDate type="both" timeStyle="short" value="<%= contenu.getDateAjout() %>" /></p>
+                                <p>Mis à jour le: <fmt:formatDate type="both" timeStyle="short" value="<%= contenu.getDateAjout() %>" /></p>
                                 <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto mb-3" href="<%= request.getContextPath() %>/intelligence-artificielle/contenu/<%= contenu.getUrl() %>/<%= contenu.getId() %>">
                                     En savoir plus
                                     <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>

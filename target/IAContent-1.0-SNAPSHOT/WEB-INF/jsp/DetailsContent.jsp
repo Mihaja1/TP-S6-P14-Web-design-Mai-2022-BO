@@ -117,7 +117,7 @@
           <div class="card-body px-4 pt-0 pb-0">
             <p><strong>Catégorie:</strong> <%= contenu.getCategorie().getDesignation() %></p>
             <p><strong>Auteur:</strong> <%= contenu.getAdmin().getNom() %></p>
-            <p><strong>Publié le:</strong> <fmt:formatDate type="both" timeStyle="short" value="<%= contenu.getDateAjout() %>" /></p>
+            <p><strong>Mis à jour le:</strong> <fmt:formatDate type="both" timeStyle="short" value="<%= contenu.getDateAjout() %>" /></p>
             <p><%= contenu.getContenu() %></p>
           </div>
         </div>
