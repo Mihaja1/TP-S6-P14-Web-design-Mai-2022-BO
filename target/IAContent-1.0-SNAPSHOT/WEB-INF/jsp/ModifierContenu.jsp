@@ -150,12 +150,13 @@
                   <textarea id="editor" name="contenu"><%= contenu.getContenu() %></textarea>
                 </div>
                 <div class="mb-3">
-                  <select name="idCategorie" value="<%= contenu.getCategorie().getDesignation() %>" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                    <option value="" disabled>Catégorie...</option>
+                  <select name="idCategorie"  class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                    <option value="">Catégorie...</option>
                     <% for ( Categorie categorie : categories) { %>
-                      <option value="<%= categorie.getId() %>"><%= categorie.getDesignation() %></option>
-                      <% if(contenu.getCategorie() == categorie) { %>
+                      <% if(contenu.getCategorie().getId() == categorie.getId()) { %>
                         <option value="<%= categorie.getId() %>" selected><%= categorie.getDesignation() %></option>
+                      <% } else {%>
+                        <option value="<%= categorie.getId() %>"><%= categorie.getDesignation() %></option>
                       <% } %>
                     <% } %>
                   </select>
